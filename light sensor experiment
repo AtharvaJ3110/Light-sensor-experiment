@@ -1,0 +1,31 @@
+void setup() {
+pinMode(13,OUTPUT);
+pinMode(12,OUTPUT);
+pinMode(10,OUTPUT);
+pinMode(8,INPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+
+Serial.println(analogRead(5));
+if(analogRead(5)>400 && analogRead(5)<=600){
+  digitalWrite(13,HIGH);
+   digitalWrite(12,LOW);
+  digitalWrite(10,LOW);
+  
+}else if(analogRead(5)>600 && analogRead(5)<700) {
+  digitalWrite(13,LOW);
+  digitalWrite(12,LOW);
+  digitalWrite(10,HIGH);
+} else{
+  digitalWrite(13,LOW);
+  digitalWrite(12,HIGH);
+  digitalWrite(10,LOW);
+}
+}
+
+
+
+  
+
